@@ -1,0 +1,429 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/bin/npm', 'install', 'pg-native' ]
+info using npm@1.1.4
+info using node@v0.6.12
+verbose config file /home/toth/.npmrc
+verbose config file /usr/etc/npmrc
+verbose config file /usr/share/npm/npmrc
+verbose has wscript [ undefined,
+verbose has wscript   { file: '/var/www/buppa/node/node_modules/pg/package.json',
+verbose has wscript     contributors: false,
+verbose has wscript     serverjs: false,
+verbose has wscript     wscript: true } ]
+verbose caching /var/www/buppa/node/node_modules/pg/package.json
+verbose cache add [ 'pg-native', null ]
+silly cache add: name, spec, args [ undefined, 'pg-native', [ 'pg-native', null ] ]
+verbose parsed url { pathname: 'pg-native', path: 'pg-native', href: 'pg-native' }
+verbose addNamed [ 'pg-native', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'pg-native', '', false ]
+verbose raw, before any munging pg-native
+verbose url resolving [ 'http://registry.npmjs.org/', './pg-native' ]
+verbose url resolved http://registry.npmjs.org/pg-native
+http GET http://registry.npmjs.org/pg-native
+http 200 http://registry.npmjs.org/pg-native
+silly get cb [ 200,
+silly get cb   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+silly get cb     etag: '"1GYB2BTBF0RR06CHG8WZ9P3FO"',
+silly get cb     'content-type': 'application/json',
+silly get cb     'cache-control': 'max-age=60',
+silly get cb     'content-length': '39313',
+silly get cb     'accept-ranges': 'bytes',
+silly get cb     date: 'Thu, 26 Mar 2015 14:12:09 GMT',
+silly get cb     via: '1.1 varnish',
+silly get cb     age: '0',
+silly get cb     connection: 'keep-alive',
+silly get cb     'x-served-by': 'cache-iad2141-IAD',
+silly get cb     'x-cache': 'MISS',
+silly get cb     'x-cache-hits': '0',
+silly get cb     'x-timer': 'S1427379129.155994,VS0,VE85',
+silly get cb     vary: 'Accept' } ]
+verbose mkdir (expected) error ENOENT, no such file or directory '/home/toth/.npm/pg-native'
+verbose mkdir done: /home/toth/.npm/pg-native 755
+silly name, range, hasData 2 [ 'pg-native', '', true ]
+silly versions [ 'pg-native',
+silly versions   [ '0.0.1',
+silly versions     '0.0.2',
+silly versions     '0.1.0',
+silly versions     '0.2.0',
+silly versions     '0.3.0',
+silly versions     '0.4.0',
+silly versions     '0.4.1',
+silly versions     '0.5.0',
+silly versions     '0.5.1',
+silly versions     '0.5.2',
+silly versions     '1.0.0',
+silly versions     '1.0.1',
+silly versions     '1.0.2',
+silly versions     '1.0.3',
+silly versions     '1.1.0',
+silly versions     '1.2.0',
+silly versions     '1.3.0',
+silly versions     '1.4.0',
+silly versions     '1.4.1',
+silly versions     '1.4.2',
+silly versions     '1.4.3',
+silly versions     '1.5.0',
+silly versions     '1.7.2',
+silly versions     '1.7.3',
+silly versions     '1.8.0' ] ]
+verbose bin dist [ '0.6-ares1.7.5-evundefined-openssl1.0.1-v83.7.12.22-linux-x64-3.8.0-29-generic',
+verbose bin dist   { shasum: 'dfbc8b80ec121e4eae854eac3a4b5628694ee30b',
+verbose bin dist     tarball: 'http://registry.npmjs.org/pg-native/-/pg-native-1.8.0.tgz' } ]
+verbose addRemoteTarball [ 'http://registry.npmjs.org/pg-native/-/pg-native-1.8.0.tgz',
+verbose addRemoteTarball   'dfbc8b80ec121e4eae854eac3a4b5628694ee30b' ]
+verbose mkdir (expected) error ENOENT, no such file or directory '/tmp/npm-1427379138799'
+verbose mkdir (expected) error ENOENT, no such file or directory '/tmp/npm-1427379138799/1427379138799-0.7841371244285256'
+verbose mkdir done: /tmp/npm-1427379138799/1427379138799-0.7841371244285256 755
+verbose fetch to /tmp/npm-1427379138799/1427379138799-0.7841371244285256/tmp.tgz
+http GET http://registry.npmjs.org/pg-native/-/pg-native-1.8.0.tgz
+http 200 http://registry.npmjs.org/pg-native/-/pg-native-1.8.0.tgz
+silly updated sha bytes 12348
+info shasum dfbc8b80ec121e4eae854eac3a4b5628694ee30b
+info shasum /tmp/npm-1427379138799/1427379138799-0.7841371244285256/tmp.tgz
+verbose mkdir (expected) error ENOENT, no such file or directory '/tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm'
+verbose mkdir done: /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm 755
+verbose unpack_ uid, gid [ 1000, 1000 ]
+verbose unpackTarget /tmp/npm-1427379138799/1427379138799-0.7841371244285256/package
+silly gunzTarPerm modes [ '755', '644' ]
+silly afterUntar ok
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/.travis.yml
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/Makefile
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/package.json
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/index.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/.npmignore
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/README.md
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/multiple-queries.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/cancel.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/connection.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/notify.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/load.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/query-sync.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/huge-query.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/version.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/array-mode.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/async-workflow.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/many-errors.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/index.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/prepare.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/copy-from.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/copy-to.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/domains.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/query-async.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/mocha.opts
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/many-connections.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/test/custom-types.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/lib
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/lib/copy-stream.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/bench
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/bench/index.js
+silly asyncMap in gTP /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package/bench/leaks.js
+verbose gunzed /tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package
+verbose rm'ed /tmp/npm-1427379138799/1427379138799-0.7841371244285256/package
+verbose renamed [ '/tmp/npm-1427379138799/1427379138799-0.7841371244285256/___package.npm/package',
+verbose renamed   '/tmp/npm-1427379138799/1427379138799-0.7841371244285256/package' ]
+verbose caching /tmp/npm-1427379138799/1427379138799-0.7841371244285256/package/package.json
+verbose loadDefaults pg-native@1.8.0
+verbose tarball contents [ 'package', 'tmp.tgz' ]
+verbose from cache /tmp/npm-1427379138799/1427379138799-0.7841371244285256/package/package.json
+verbose pack /tmp/npm-1427379138799/1427379138799-0.7841371244285256/package
+verbose pack /tmp/npm-1427379138799/1427379138799-0.7841371244285256/package /home/toth/.npm/pg-native/1.8.0/package.tgz
+silly makeList /tmp/npm-1427379138799/1427379138799-0.7841371244285256/package
+silly dir, dirLen [ '/tmp/npm-1427379138799/1427379138799-0.7841371244285256/package',
+silly dir, dirLen   64 ]
+verbose tarball /home/toth/.npm/pg-native/1.8.0/package.tgz
+verbose parent /tmp/npm-1427379138799/1427379138799-0.7841371244285256/package
+verbose mkdir (expected) error ENOENT, no such file or directory '/home/toth/.npm/pg-native/1.8.0/___package.npm'
+verbose mkdir done: /home/toth/.npm/pg-native/1.8.0/___package.npm 755
+verbose unpack_ uid, gid [ 1000, 1000 ]
+verbose unpackTarget /home/toth/.npm/pg-native/1.8.0/package
+silly gunzTarPerm modes [ '755', '644' ]
+silly afterUntar ok
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/.travis.yml
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/Makefile
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/package.json
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/index.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/.npmignore
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/README.md
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/multiple-queries.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/cancel.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/connection.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/notify.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/load.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/query-sync.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/huge-query.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/version.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/array-mode.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/async-workflow.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/many-errors.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/index.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/prepare.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/copy-from.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/copy-to.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/domains.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/query-async.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/mocha.opts
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/many-connections.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/test/custom-types.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/lib
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/lib/copy-stream.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/bench
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/bench/index.js
+silly asyncMap in gTP /home/toth/.npm/pg-native/1.8.0/___package.npm/package/bench/leaks.js
+verbose gunzed /home/toth/.npm/pg-native/1.8.0/___package.npm/package
+verbose rm'ed /home/toth/.npm/pg-native/1.8.0/package
+verbose renamed [ '/home/toth/.npm/pg-native/1.8.0/___package.npm/package',
+verbose renamed   '/home/toth/.npm/pg-native/1.8.0/package' ]
+verbose caching /home/toth/.npm/pg-native/1.8.0/package/package.json
+verbose loadDefaults pg-native@1.8.0
+silly updated sha bytes 12471
+info shasum 4354c1c72e29c28ece0ee3f6d30cf48add6594dc
+info shasum /home/toth/.npm/pg-native/1.8.0/package.tgz
+verbose from cache /home/toth/.npm/pg-native/1.8.0/package/package.json
+verbose chmod /home/toth/.npm/pg-native/1.8.0/package.tgz 644
+verbose chown [ '/home/toth/.npm/pg-native/1.8.0/package.tgz', 1000, 1000 ]
+silly resolved [ { name: 'pg-native',
+silly resolved     version: '1.8.0',
+silly resolved     description: 'A slightly nicer interface to Postgres over node-libpq',
+silly resolved     main: 'index.js',
+silly resolved     scripts: { test: 'mocha' },
+silly resolved     repository: 
+silly resolved      { type: 'git',
+silly resolved        url: 'git://github.com/brianc/node-pg-native.git' },
+silly resolved     keywords: [ 'postgres', 'pg', 'libpq' ],
+silly resolved     author: { name: 'Brian M. Carlson' },
+silly resolved     license: 'MIT',
+silly resolved     bugs: { url: 'https://github.com/brianc/node-pg-native/issues' },
+silly resolved     homepage: 'https://github.com/brianc/node-pg-native',
+silly resolved     dependencies: 
+silly resolved      { libpq: '^1.5.0',
+silly resolved        'pg-types': '1.6.0',
+silly resolved        'readable-stream': '1.0.31' },
+silly resolved     devDependencies: 
+silly resolved      { 'generic-pool': '^2.1.1',
+silly resolved        async: '^0.9.0',
+silly resolved        'concat-stream': '^1.4.6',
+silly resolved        lodash: '^2.4.1',
+silly resolved        mocha: '^1.21.4',
+silly resolved        okay: '^0.3.0',
+silly resolved        pg: '^3.4.2',
+silly resolved        semver: '^4.1.0' },
+silly resolved     _id: 'pg-native@1.8.0',
+silly resolved     optionalDependencies: {},
+silly resolved     engines: { node: '*' },
+silly resolved     _engineSupported: true,
+silly resolved     _npmVersion: '1.1.4',
+silly resolved     _nodeVersion: 'v0.6.12',
+silly resolved     _defaultsLoaded: true,
+silly resolved     dist: { shasum: '4354c1c72e29c28ece0ee3f6d30cf48add6594dc' },
+silly resolved     _from: 'pg-native' } ]
+info into /var/www/buppa/node pg-native@1.8.0
+info installOne pg-native@1.8.0
+verbose from cache /home/toth/.npm/pg-native/1.8.0/package/package.json
+info unbuild /var/www/buppa/node/node_modules/pg-native
+verbose mkdir (expected) error ENOENT, no such file or directory '/var/www/buppa/node/node_modules/___pg-native.npm'
+verbose mkdir done: /var/www/buppa/node/node_modules/___pg-native.npm 755
+verbose unpack_ uid, gid [ 1000, 1000 ]
+verbose unpackTarget /var/www/buppa/node/node_modules/pg-native
+silly gunzTarPerm modes [ '755', '644' ]
+silly afterUntar ok
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/.travis.yml
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/Makefile
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/package.json
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/index.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/.npmignore
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/README.md
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/multiple-queries.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/cancel.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/connection.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/notify.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/load.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/query-sync.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/huge-query.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/version.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/array-mode.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/async-workflow.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/many-errors.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/index.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/prepare.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/copy-from.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/copy-to.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/domains.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/query-async.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/mocha.opts
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/many-connections.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/test/custom-types.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/lib
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/lib/copy-stream.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/bench
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/bench/index.js
+silly asyncMap in gTP /var/www/buppa/node/node_modules/___pg-native.npm/package/bench/leaks.js
+verbose gunzed /var/www/buppa/node/node_modules/___pg-native.npm/package
+verbose rm'ed /var/www/buppa/node/node_modules/pg-native
+verbose renamed [ '/var/www/buppa/node/node_modules/___pg-native.npm/package',
+verbose renamed   '/var/www/buppa/node/node_modules/pg-native' ]
+verbose caching /var/www/buppa/node/node_modules/pg-native/package.json
+verbose loadDefaults pg-native@1.8.0
+info preinstall pg-native@1.8.0
+verbose from cache /var/www/buppa/node/node_modules/pg-native/package.json
+verbose readDependencies: using package.json deps
+verbose from cache /var/www/buppa/node/node_modules/pg-native/package.json
+verbose readDependencies: using package.json deps
+verbose cache add [ 'libpq@^1.5.0', null ]
+silly cache add: name, spec, args [ undefined, 'libpq@^1.5.0', [ 'libpq@^1.5.0', null ] ]
+verbose parsed url { pathname: 'libpq@^1.5.0',
+verbose parsed url   path: 'libpq@^1.5.0',
+verbose parsed url   href: 'libpq@^1.5.0' }
+silly cache add: name, spec, args [ 'libpq', '^1.5.0', [ 'libpq', '^1.5.0' ] ]
+verbose parsed url { pathname: '^1.5.0', path: '^1.5.0', href: '^1.5.0' }
+verbose addNamed [ 'libpq', '^1.5.0' ]
+verbose addNamed [ null, null ]
+info addNameTag [ 'libpq', '^1.5.0' ]
+verbose cache add [ 'pg-types@1.6.0', null ]
+silly cache add: name, spec, args [ undefined, 'pg-types@1.6.0', [ 'pg-types@1.6.0', null ] ]
+verbose parsed url { pathname: 'pg-types@1.6.0',
+verbose parsed url   path: 'pg-types@1.6.0',
+verbose parsed url   href: 'pg-types@1.6.0' }
+silly cache add: name, spec, args [ 'pg-types', '1.6.0', [ 'pg-types', '1.6.0' ] ]
+verbose parsed url { pathname: '1.6.0', path: '1.6.0', href: '1.6.0' }
+verbose addNamed [ 'pg-types', '1.6.0' ]
+verbose addNamed [ '1.6.0', '1.6.0' ]
+verbose cache add [ 'readable-stream@1.0.31', null ]
+silly cache add: name, spec, args [ undefined,
+silly cache add: name, spec, args   'readable-stream@1.0.31',
+silly cache add: name, spec, args   [ 'readable-stream@1.0.31', null ] ]
+verbose parsed url { pathname: 'readable-stream@1.0.31',
+verbose parsed url   path: 'readable-stream@1.0.31',
+verbose parsed url   href: 'readable-stream@1.0.31' }
+silly cache add: name, spec, args [ 'readable-stream', '1.0.31', [ 'readable-stream', '1.0.31' ] ]
+verbose parsed url { pathname: '1.0.31', path: '1.0.31', href: '1.0.31' }
+verbose addNamed [ 'readable-stream', '1.0.31' ]
+verbose addNamed [ '1.0.31', '1.0.31' ]
+verbose raw, before any munging libpq
+verbose url resolving [ 'http://registry.npmjs.org/', './libpq' ]
+verbose url resolved http://registry.npmjs.org/libpq
+http GET http://registry.npmjs.org/libpq
+verbose raw, before any munging pg-types/1.6.0
+verbose url resolving [ 'http://registry.npmjs.org/', './pg-types/1.6.0' ]
+verbose url resolved http://registry.npmjs.org/pg-types/1.6.0
+http GET http://registry.npmjs.org/pg-types/1.6.0
+verbose raw, before any munging readable-stream/1.0.31
+verbose url resolving [ 'http://registry.npmjs.org/', './readable-stream/1.0.31' ]
+verbose url resolved http://registry.npmjs.org/readable-stream/1.0.31
+http GET http://registry.npmjs.org/readable-stream/1.0.31
+http 200 http://registry.npmjs.org/readable-stream/1.0.31
+silly get cb [ 200,
+silly get cb   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+silly get cb     etag: '"4U67J5EHI8O2AY605T2EPPXP7"',
+silly get cb     'content-type': 'application/json',
+silly get cb     'cache-control': 'max-age=60',
+silly get cb     'content-length': '1178',
+silly get cb     'accept-ranges': 'bytes',
+silly get cb     date: 'Thu, 26 Mar 2015 14:12:10 GMT',
+silly get cb     via: '1.1 varnish',
+silly get cb     age: '0',
+silly get cb     connection: 'keep-alive',
+silly get cb     'x-served-by': 'cache-atl6227-ATL',
+silly get cb     'x-cache': 'HIT',
+silly get cb     'x-cache-hits': '1',
+silly get cb     'x-timer': 'S1427379130.525149,VS0,VE28',
+silly get cb     vary: 'Accept' } ]
+verbose mkdir (expected) error ENOENT, no such file or directory '/home/toth/.npm/readable-stream'
+verbose mkdir (expected) error ENOENT, no such file or directory '/home/toth/.npm/readable-stream/1.0.31'
+verbose mkdir done: /home/toth/.npm/readable-stream/1.0.31 755
+verbose bin dist [ '0.6-ares1.7.5-evundefined-openssl1.0.1-v83.7.12.22-linux-x64-3.8.0-29-generic',
+verbose bin dist   { shasum: '8f2502e0bc9e3b0da1b94520aabb4e2603ecafae',
+verbose bin dist     tarball: 'http://registry.npmjs.org/readable-stream/-/readable-stream-1.0.31.tgz' } ]
+verbose addRemoteTarball [ 'http://registry.npmjs.org/readable-stream/-/readable-stream-1.0.31.tgz',
+verbose addRemoteTarball   '8f2502e0bc9e3b0da1b94520aabb4e2603ecafae' ]
+verbose mkdir (expected) error ENOENT, no such file or directory '/tmp/npm-1427379138799/1427379139938-0.6935196544509381'
+verbose mkdir done: /tmp/npm-1427379138799/1427379139938-0.6935196544509381 755
+verbose fetch to /tmp/npm-1427379138799/1427379139938-0.6935196544509381/tmp.tgz
+http GET http://registry.npmjs.org/readable-stream/-/readable-stream-1.0.31.tgz
+http 200 http://registry.npmjs.org/pg-types/1.6.0
+silly get cb [ 200,
+silly get cb   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+silly get cb     etag: '"68I703KAWT8IOHBHH949N4NKO"',
+silly get cb     'content-type': 'application/json',
+silly get cb     'cache-control': 'max-age=60',
+silly get cb     'content-length': '864',
+silly get cb     'accept-ranges': 'bytes',
+silly get cb     date: 'Thu, 26 Mar 2015 14:12:10 GMT',
+silly get cb     via: '1.1 varnish',
+silly get cb     age: '0',
+silly get cb     connection: 'keep-alive',
+silly get cb     'x-served-by': 'cache-atl6226-ATL',
+silly get cb     'x-cache': 'MISS',
+silly get cb     'x-cache-hits': '0',
+silly get cb     'x-timer': 'S1427379130.524892,VS0,VE322',
+silly get cb     vary: 'Accept' } ]
+verbose mkdir (expected) error ENOENT, no such file or directory '/home/toth/.npm/pg-types'
+verbose mkdir (expected) error ENOENT, no such file or directory '/home/toth/.npm/pg-types/1.6.0'
+verbose mkdir done: /home/toth/.npm/pg-types/1.6.0 755
+verbose bin dist [ '0.6-ares1.7.5-evundefined-openssl1.0.1-v83.7.12.22-linux-x64-3.8.0-29-generic',
+verbose bin dist   { shasum: '3872a0f199143025497f4ee2a65fdaf00d7ea8b3',
+verbose bin dist     tarball: 'http://registry.npmjs.org/pg-types/-/pg-types-1.6.0.tgz' } ]
+verbose addRemoteTarball [ 'http://registry.npmjs.org/pg-types/-/pg-types-1.6.0.tgz',
+verbose addRemoteTarball   '3872a0f199143025497f4ee2a65fdaf00d7ea8b3' ]
+verbose mkdir (expected) error ENOENT, no such file or directory '/tmp/npm-1427379138799/1427379140237-0.23649848042987287'
+verbose mkdir done: /tmp/npm-1427379138799/1427379140237-0.23649848042987287 755
+verbose fetch to /tmp/npm-1427379138799/1427379140237-0.23649848042987287/tmp.tgz
+http GET http://registry.npmjs.org/pg-types/-/pg-types-1.6.0.tgz
+http 200 http://registry.npmjs.org/readable-stream/-/readable-stream-1.0.31.tgz
+http 200 http://registry.npmjs.org/libpq
+silly get cb [ 200,
+silly get cb   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+silly get cb     etag: '"4NN7L41XLEOTJQRGI9IE8N4I0"',
+silly get cb     'content-type': 'application/json',
+silly get cb     'cache-control': 'max-age=60',
+silly get cb     'content-length': '43727',
+silly get cb     'accept-ranges': 'bytes',
+silly get cb     date: 'Thu, 26 Mar 2015 14:12:10 GMT',
+silly get cb     via: '1.1 varnish',
+silly get cb     age: '0',
+silly get cb     connection: 'keep-alive',
+silly get cb     'x-served-by': 'cache-atl6228-ATL',
+silly get cb     'x-cache': 'MISS',
+silly get cb     'x-cache-hits': '0',
+silly get cb     'x-timer': 'S1427379130.522319,VS0,VE80',
+silly get cb     vary: 'Accept' } ]
+verbose mkdir (expected) error ENOENT, no such file or directory '/home/toth/.npm/libpq'
+verbose mkdir done: /home/toth/.npm/libpq 755
+verbose about to build /var/www/buppa/node/node_modules/pg-native
+ERR! error installing pg-native@1.8.0
+info unbuild /var/www/buppa/node/node_modules/pg-native
+verbose from cache /var/www/buppa/node/node_modules/pg-native/package.json
+info preuninstall pg-native@1.8.0
+info uninstall pg-native@1.8.0
+verbose unbuild pg-native@1.8.0 [ true,
+verbose unbuild pg-native@1.8.0   '/var/www/buppa/node/node_modules',
+verbose unbuild pg-native@1.8.0   '/var/www/buppa/node/node_modules' ]
+info postuninstall pg-native@1.8.0
+verbose installOne cb pg-native@1.8.0
+ERR! Error: No compatible version found: libpq@'^1.5.0'
+ERR! Valid install targets:
+ERR! ["0.2.0","0.2.1","0.2.2","0.2.3","0.2.4","0.2.5","0.3.0","0.4.0","0.4.1","0.5.0","0.5.1","0.5.2","0.5.3","1.0.0","1.0.1","1.1.0","1.2.0","1.2.1","1.3.0","1.3.1","1.4.0","1.4.1","1.4.2","1.5.1"]
+ERR!     at installTargetsError (/usr/share/npm/lib/cache.js:488:10)
+ERR!     at /usr/share/npm/lib/cache.js:375:15
+ERR!     at saved (/usr/share/npm/lib/utils/npm-registry-client/get.js:147:7)
+ERR!     at Object.oncomplete (/usr/lib/nodejs/graceful-fs.js:230:7)
+ERR! You may report this log at:
+ERR!     <http://bugs.debian.org/npm>
+ERR! or use
+ERR!     reportbug --attach /var/www/buppa/node/npm-debug.log npm
+ERR! 
+ERR! System Linux 3.8.0-29-generic
+ERR! command "node" "/usr/bin/npm" "install" "pg-native"
+ERR! cwd /var/www/buppa/node
+ERR! node -v v0.6.12
+ERR! npm -v 1.1.4
+ERR! message No compatible version found: libpq@'^1.5.0'
+ERR! message Valid install targets:
+ERR! message ["0.2.0","0.2.1","0.2.2","0.2.3","0.2.4","0.2.5","0.3.0","0.4.0","0.4.1","0.5.0","0.5.1","0.5.2","0.5.3","1.0.0","1.0.1","1.1.0","1.2.0","1.2.1","1.3.0","1.3.1","1.4.0","1.4.1","1.4.2","1.5.1"]
+verbose exit [ 1, true ]

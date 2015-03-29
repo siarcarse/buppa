@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="SHORTCUT ICON" href="../../../images/favicon.ico">
+    <title>Demo - Pacs</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/flat/dist/css/flat-ui.css">
+    <link rel="stylesheet" type="text/css" href="tools/datatable/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="tools/datepicker-bootstrap/css/datepicker.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <style type="text/css" class="init">
+    body {
+        body {
+            font-size: 140%;
+        }
+    }
+    
+    .contendor {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    
+    #example tbody tr.highlight td {
+        background-color: #4cb3d6;
+    }
+    
+    #exams tbody tr.highlight td {
+        background-color: #4cb3d6;
+    }
+    </style>
+    <script type="text/javascript" language="javascript" src="tools/datatable/media/js/jquery.js"></script>
+    <script type="text/javascript" language="javascript" src="tools/datatable/media/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" src="tools/datatable/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" language="javascript" src="tools/datepicker-bootstrap/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" language="javascript" src="tools/datepicker-bootstrap/js/locales/bootstrap-datepicker.es.js"></script>
+    <script type="text/javascript" language="javascript" src="js/flat/dist/js/flat-ui.js"></script>
+    <script src="http://localhost:6969/socket.io/socket.io.js"></script>
+</head>
+
+<body class="">
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Demo</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-3">
+                <div class="input-group date">
+                    <input type="text" id="idate" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group date fdate">
+                    <input type="text" id="fdate" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button id="search" type="button" class="btn btn-info">Buscar</button>
+            </div>
+        </div>
+    </div>
+    <div class="contendor">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <section>
+                    <legend>Estudios <strong>PACS</strong>
+                    </legend>
+                    <table id="example" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Paciente</th>
+                                <th>Rut</th>
+                                <th>Fecha</th>
+                                <th>Descripcion</th>
+                                <th>Nº Acceso</th>
+                                <th>Imágenes</th>
+                                <th>Prioridad</th>
+                                <th>Estado</th>
+                                <th>Informe</th>
+                                <th>Osirix</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <section>
+            </div>
+        </div>
+    </div>
+    <legend></legend>
+</body>
+<script type="text/javascript" language="javascript" class="init">
+var socket = io.connect('http://localhost:6969');
+socket.on('connect', function() {
+    socket.on('message', function(message) {
+        var array = message.split(',id,');
+        var pk = array[1];
+        $.post('connectors/getStudy.php', {
+            pk: pk
+        }, function(data, textStatus, xhr) {
+            var json = $.parseJSON(data);
+            console.log(json[0]);
+            var rowNode = $('#example').DataTable().row.add([
+                    json[0][0],
+                    json[0][1],
+                    json[0][2],
+                    json[0][3],
+                    json[0][4],
+                    json[0][5],
+                    json[0][6],
+                    json[0][7],
+                    json[0][8],
+                    json[0][9],
+                    json[0][10],
+                ])
+                .draw()
+                .node();
+            $(rowNode).css('color', 'red').animate({
+                color: 'black'
+            }, 10000);
+        });
+    });
+});
+$(document).ready(function() {
+
+    $('.input-group.date').datepicker({
+        language: 'es',
+        format: 'yyyy-mm-dd',
+    });
+
+    $('.input-group.date.fdate').datepicker({
+        language: 'es',
+        format: 'yyyy-mm-dd',
+    });
+    var idate = '2015-03-10';
+    var today = '2015-03-25';
+    $('.input-group.date').datepicker('setDate', idate);
+    $('.input-group.date.fdate').datepicker('setDate', today);
+    $('.input-group.date').datepicker()
+        .on('changeDate', function(e) {
+            $('.input-group.date').datepicker('hide');
+        });
+
+    var idate = $('#idate').val();
+    var fdate = $('#fdate').val();
+    var url = 'getCalendarAssigned.php?idate=' + idate + '&fdate=' + fdate;
+    var ajaxComplete = false,
+        url;
+    var ajaxCompleteExams = false;
+    url = 'connectors/getStudies.php?idate=' + idate + '&fdate=' + fdate;
+    var table = $('#example').DataTable({
+        "ajax": {
+            "url": url,
+            "data": function(d) {
+                ajaxComplete = true;
+            }
+        },
+        "columnDefs": [{
+            "width": "15%",
+            "targets": 1
+        }, {
+            "width": "5%",
+            "targets": 4
+        }],
+        "lengthMenu": [
+            [5, 10, 20],
+            [5, 10, 20]
+        ],
+        "language": {
+            "url": "tools/datatable/Spanish.json"
+        },
+        //"bSort":false,
+        "aaSorting": [],
+        "aaSortingFixed": [
+            [0, 'desc']
+        ],
+        "serverSide": false,
+        "processing": true,
+        "deferRender": true,
+        "fnRowCallback": function(nRow, aData, iDisplayIndex) {
+            $(nRow).on("click", function(event) {
+                if ($(this).hasClass('highlight')) {
+                    $(this).removeClass('highlight');
+                } else {
+                    table.$('tr.highlight').removeClass('highlight');
+                    $(this).addClass('highlight');
+                    var calendar = $(this).children().first().text();
+                }
+            });
+            //Coloreado en rojo agendamientos de Urgencia
+
+            $(nRow).children().last().addClass('text-center');
+            $('td:eq(8)', nRow).addClass('text-center');
+            $('td:eq(9)', nRow).addClass('text-center');
+            $(nRow).children().last().click(function(event) {
+                var idate = $('#idate').val();
+                var fdate = $('#fdate').val();
+                var calendar = $(this).children().attr('title');
+                var name = $($(this).parent().children()[1]).text();
+            });
+            if (aData[8] == 0){
+                var imgTagState = '<span class="label label-danger">Visto</span>';
+            }else {
+                var imgTagState = '<span class="label label-primary">'+aData[8]+'</span>';
+            }
+            var imgTagReport = '<i class="fa fa-file-text-o fa-fw" style="cursor:pointer;" onclick="console.log(' + aData[10] + ');"></i>';
+            var imgTag = '<a href="osirix://?methodName=retrieve&serverName=DEMO&filterKey=StudyInstanceUID&filterValue=' + aData[9] + '"><img src="assets/images/osirix.png" /></a>';
+            $('td:eq(8)', nRow).html(imgTagState);
+            $('td:eq(9)', nRow).html(imgTagReport);
+            $('td:eq(10)', nRow).html(imgTag);
+
+        },
+        "fnInfoCallback": function(oSettings, iStart, iEnd, iMax, iTotal, sPre) {
+
+        }
+    });
+    $('#search').click(function(event) {
+        var idate = $('#idate').val();
+        var fdate = $('#fdate').val(),
+            url;
+        url = 'connectors/getStudies.php?idate=' + idate + '&fdate=' + fdate;
+        table.ajax.url(url).load();
+    });
+});
+</script>
+
+</html>
