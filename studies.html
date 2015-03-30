@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="tools/datatable/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.css">
     <link rel="stylesheet" type="text/css" href="tools/datepicker-bootstrap/css/datepicker.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="js/notifications/toastr.css" rel="stylesheet" type="text/css" />
     <style type="text/css" class="init">
     body {
         body {
@@ -31,13 +32,6 @@
         background-color: #4cb3d6;
     }
     </style>
-    <script type="text/javascript" language="javascript" src="tools/datatable/media/js/jquery.js"></script>
-    <script type="text/javascript" language="javascript" src="tools/datatable/media/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" language="javascript" src="tools/datatable/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.js"></script>
-    <script type="text/javascript" language="javascript" src="tools/datepicker-bootstrap/js/bootstrap-datepicker.js"></script>
-    <script type="text/javascript" language="javascript" src="tools/datepicker-bootstrap/js/locales/bootstrap-datepicker.es.js"></script>
-    <script type="text/javascript" language="javascript" src="js/flat/dist/js/flat-ui.js"></script>
-    <script src="http://localhost:6969/socket.io/socket.io.js"></script>
 </head>
 
 <body class="">
@@ -127,7 +121,17 @@
     </div>
     <legend></legend>
 </body>
+<script type="text/javascript" language="javascript" src="tools/datatable/media/js/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="tools/datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" src="tools/datatable/extensions/Plugins/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+<script type="text/javascript" language="javascript" src="tools/datepicker-bootstrap/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" language="javascript" src="tools/datepicker-bootstrap/js/locales/bootstrap-datepicker.es.js"></script>
+<script type="text/javascript" language="javascript" src="js/flat/dist/js/flat-ui.js"></script>
+<script src="http://localhost:6969/socket.io/socket.io.js"></script>
+<script src="js/notifications/toastr.js"></script>
+<script src="js/ion.sound/js/ion.sound.js"></script>
 <script type="text/javascript" language="javascript" class="init">
+var news = 0;
 var socket = io.connect('http://localhost:6969');
 socket.on('connect', function() {
     socket.on('message', function(message) {
@@ -156,11 +160,51 @@ socket.on('connect', function() {
             $(rowNode).css('color', 'red').animate({
                 color: 'black'
             }, 10000);
+            news++;
+            var msg = news + ' nuevo(s) estudio en el PACS';
+            $(function() {
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": "100",
+                    "hideDuration": "500",
+                    "timeOut": "2500",
+                    "extendedTimeOut": "500",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+                toastr["info"](msg, '<i class="fa fa-heartbeat"></i>', true);
+                ion.sound({
+                    sounds: [{
+                        name: "beer_can_opening"
+                    }, {
+                        name: "messagebox"
+                    }, {
+                        name: "branch_break"
+                    }, {
+                        name: "button_click"
+                    }],
+
+                    // main config
+                    path: "assets/sounds/",
+                    multiplay: true,
+                    volume: 1.0
+                });
+
+                // play sound
+                ion.sound.play("messagebox");
+            });
         });
     });
 });
 $(document).ready(function() {
-
     $('.input-group.date').datepicker({
         language: 'es',
         format: 'yyyy-mm-dd',
@@ -209,9 +253,6 @@ $(document).ready(function() {
         },
         //"bSort":false,
         "aaSorting": [],
-        "aaSortingFixed": [
-            [0, 'desc']
-        ],
         "serverSide": false,
         "processing": true,
         "deferRender": true,
@@ -225,7 +266,6 @@ $(document).ready(function() {
                     var calendar = $(this).children().first().text();
                 }
             });
-            //Coloreado en rojo agendamientos de Urgencia
 
             $(nRow).children().last().addClass('text-center');
             $('td:eq(8)', nRow).addClass('text-center');
@@ -236,10 +276,10 @@ $(document).ready(function() {
                 var calendar = $(this).children().attr('title');
                 var name = $($(this).parent().children()[1]).text();
             });
-            if (aData[8] == 0){
+            if (aData[8] == 0) {
                 var imgTagState = '<span class="label label-danger">Visto</span>';
-            }else {
-                var imgTagState = '<span class="label label-primary">'+aData[8]+'</span>';
+            } else {
+                var imgTagState = '<span class="label label-primary">' + aData[8] + '</span>';
             }
             var imgTagReport = '<i class="fa fa-file-text-o fa-fw" style="cursor:pointer;" onclick="console.log(' + aData[10] + ');"></i>';
             var imgTag = '<a href="osirix://?methodName=retrieve&serverName=DEMO&filterKey=StudyInstanceUID&filterValue=' + aData[9] + '"><img src="assets/images/osirix.png" /></a>';
