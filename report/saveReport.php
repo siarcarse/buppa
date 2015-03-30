@@ -1,7 +1,7 @@
 <?
 session_start();
 $users_tipe = $_SESSION['UserId'];
-include("../../libs/db.class.php");
+include("../connectors/libs/db.class.php");
 $db = NEW DB();
 $db2 = NEW DB();
 $exams = explode("-", $_REQUEST['calendar_exam']);

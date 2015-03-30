@@ -1,15 +1,19 @@
 <?php
+$hostname = "192.168.0.10";
+$database = "newbiopacs";
+$username = "postgres";
+$password = "justgoon";
+$port = "5432";
+$dbconn = pg_connect("host=$hostname port=$port dbname=$database user=$username password=$password") or die('NO HAY CONEXION: ' . pg_last_error());
 
-include '../../libs/db.class.php';
-$db = NEW DB();
+$sql = "SELECT users.id, users.realname AS name FROM users";
 
-$sql = "SELECT users.id, (employee.name || ' ' || employee.lastname) AS name FROM users LEFT JOIN employee ON employee.id=users.employee WHERE role=6 AND employee.name IS NOT NULL";
-$data = $db->doSql($sql);
-do {
-    $doctors[] = array(
-        'id' => $data['id'], 
-        'name' => $data['name']
-    );
-} while ($data = pg_fetch_assoc($db->actualResults));
+
+$result = pg_query($sql) or die("SQL Error 1: " . pg_last_error());
+while ($row = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+	$id = $row['id'];
+	$name = $row['name'];
+	$doctors['data'][] = array($id,$name);
+}
 echo json_encode($doctors);
 ?>
